@@ -1,25 +1,24 @@
 library(ggmap)
 library(DatabaseConnector)
-library(RODBC)
 devtools::install_github("dkahle/ggmap")
 
 ## Put the information of SQL server and database
 connectionDetails <- DatabaseConnector::createConnectionDetails(
                                                 dbms="sql server",
-                                                server="$$$$",
-                                                user="$$$$",
-                                                password="$$$$",
-                                                schema="$$$$")
+                                                server="localhost",
+                                                user="user",
+                                                password="pw",
+                                                schema="@CDMDatabaseSchema")
 
 conn <- DatabaseConnector::connect(connectionDetails)
 
-## Put the information of Google Geocoding API
-ggmap::register_google(key = '$$$$', account_type = "standard", client = NA, signature = NA, day_limit = 2500, second_limit = 2500)
+## Put Google Geocoding API
+ggmap::register_google(key = 'PutGoogleGeocodingAPI', account_type = "standard", client = NA, signature = NA, day_limit = 2500, second_limit = 2500)
 ## Put name of the nation
-ggmap::geocode(location = '$$$$', source='google')
+ggmap::geocode(location = 'Korea', source='google')
 
 ## Get Location table of CDM version_5 from SQL server
-df_location <- DatabaseConnector::dbReadTable(conn, name = "$$$$.LOCATION")
+df_location <- DatabaseConnector::dbReadTable(conn, name = "@CDMDatabaseSchema.LOCATION")
 
 ## Make longitude and latitude data.frame
 ## Pasting addresses can be different based on each location table's characteristics
