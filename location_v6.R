@@ -13,7 +13,7 @@ connectionDetails <- DatabaseConnector::createConnectionDetails(
 
 conn <- DatabaseConnector::connect(connectionDetails)
 
-## Put the information of your Google Geocoding API
+## Put the information of Google Geocoding API
 ggmap::register_google(key = '$$$$', account_type = "standard", client = NA, signature = NA, day_limit = 2500, second_limit = 2500)
 ## Put name of the nation
 ggmap::geocode(location = '$$$$', source='google')
@@ -21,7 +21,8 @@ ggmap::geocode(location = '$$$$', source='google')
 ## Get Location table of CDM version_5 from SQL server
 df_location <- DatabaseConnector::dbReadTable(conn, name = "$$$$.LOCATION")
 
-# Make longitude and latitude data.frame
+## Make longitude and latitude data.frame
+## Pasting addresses can be different based on each location table's characteristics
 for (i in 1:nrow(df_location)){
         lat_lon <- data.frame(lat=numeric(), lon=numeric())
         na_df <- data.frame(lat=NA, lon=NA)
@@ -36,7 +37,7 @@ for (i in 1:nrow(df_location)){
         }
 }
 
-# Change column order
+# Change the order of columns
 colnames(lat_lon) <- c("longitude", "latitude")
 colorder <- c("latitude", "longitude")
 lat_lon <- lat_lon[, colorder]
