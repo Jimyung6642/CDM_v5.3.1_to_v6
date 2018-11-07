@@ -16,12 +16,12 @@ select
 	condition_source_value,
 	condition_source_concept_id
 
-into $$$$.condition_occurrence_v6
-from $$$$.CONDITION_OCCURRENCE
+into @DatabaseSchemaCDMVersion6.CONDITION_OCCURRENCE
+from @DatabaseSchemaCDMVersion5.CONDITION_OCCURRENCE
 
 
 --Insert Death data into Condition_occurrence_v6
-Insert into $$$$.condition_occurrence_v6
+Insert into @DatabaseSchemaCDMVersion6.CONDITION_OCCURRENCE
 select 
 	convert(bigint, convert(varchar, (select max(condition_occurrence_id) as max_id from nhis_nsc_new.dbo.CONDITION_OCCURRENCE)
 			 + convert(varchar, ROW_NUMBER() OVER(order by person_id)))) as condition_occurrence_id,
@@ -39,4 +39,4 @@ select
 	cause_source_value as condition_source_value,
 	NULL as condition_source_concept_id
 
-from nhis_nsc_new.dbo.death 
+from @DatabaseSchemaCDMVersion5.dbo.DEATH 
