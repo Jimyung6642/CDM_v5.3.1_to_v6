@@ -19,11 +19,11 @@ select
 	ethnicity_source_value,
 	ethnicity_source_concept_id
 
---into DatabaseSchemaCDMVersion6.person
+into DatabaseSchemaCDMVersion6.person
 from DatabaseSchemaCDMVersion5.PERSON 
 where person_id not in (select person_id from DatabaseSchemaCDMVersion5.DEATH)
 
---Insert into DatabaseSchemaCDMVersion6.dbo.person
+Insert into DatabaseSchemaCDMVersion6.dbo.person
 select
 	a.person_id,
 	gender_concept_id,
