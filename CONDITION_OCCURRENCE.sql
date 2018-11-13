@@ -39,4 +39,4 @@ select
 	cause_source_value as condition_source_value,
 	NULL as condition_source_concept_id
 
-from @DatabaseSchemaCDMVersion5.dbo.DEATH 
+from @DatabaseSchemaCDMVersion5.DEATH 
