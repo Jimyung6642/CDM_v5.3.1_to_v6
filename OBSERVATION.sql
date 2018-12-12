@@ -20,5 +20,5 @@ select
 	NULL as obs_event_field_concept_id,
 	NULL as value_as_datetime
 	
-into DatabaseSchemaCDMVersion6.observation
-from DatabaseSchemaCDMVersion5.OBSERVATION
+into @DatabaseSchemaCDMVersion6.observation
+from @DatabaseSchemaCDMVersion5.OBSERVATION
