@@ -6,5 +6,5 @@ select
 	drug_exposure_count,
 	gap_days
 
-into DatabaseSchemaCDMVersion6.drug_era
-from DatabaseSchemaCDMVersion5.DRUG_ERA
+into @DatabaseSchemaCDMVersion6.drug_era
+from @DatabaseSchemaCDMVersion5.DRUG_ERA
