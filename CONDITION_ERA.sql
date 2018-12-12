@@ -6,5 +6,5 @@ select
 	convert(datetime, condition_era_end_date) as condition_era_end_datetime,
 	condition_occurrence_count
 
-into DatabaseSchemaCDMVersion6.condition_era
-from DatabaseSchemaCDMVersion5.CONDITION_ERA
+into @DatabaseSchemaCDMVersion6.condition_era
+from @DatabaseSchemaCDMVersion5.CONDITION_ERA
