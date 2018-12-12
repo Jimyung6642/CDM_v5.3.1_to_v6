@@ -20,5 +20,5 @@ select
 	unit_source_value,
 	value_source_value
 
-into DatabaseSchemaCDMVersion6.measurement
-from DatabaseSchemaCDMVersion5.MEASUREMENT
+into @DatabaseSchemaCDMVersion6.measurement
+from @DatabaseSchemaCDMVersion5.MEASUREMENT
