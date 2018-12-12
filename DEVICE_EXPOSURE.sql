@@ -15,5 +15,5 @@ select
 	device_source_value,
 	device_source_concept_id
 
-into DatabaseSchemaCDMVersion6.device_exposure
-from DatabaseSchemaCDMVersion5.DEVICE_EXPOSURE
+into @DatabaseSchemaCDMVersion6.device_exposure
+from @DatabaseSchemaCDMVersion5.DEVICE_EXPOSURE
