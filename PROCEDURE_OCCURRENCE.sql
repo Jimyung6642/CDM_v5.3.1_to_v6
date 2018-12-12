@@ -13,5 +13,5 @@ select
 	procedure_source_concept_id,
 	NULL as modifier_source_value
 
-into DatabaseSchemaCDMVersion6.dbo.procedure_occurrence
-from DatabaseSchemaCDMVersion5.PROCEDURE_OCCURRENCE
+into @DatabaseSchemaCDMVersion6.dbo.procedure_occurrence
+from @DatabaseSchemaCDMVersion5.PROCEDURE_OCCURRENCE
