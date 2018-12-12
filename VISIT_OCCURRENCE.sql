@@ -18,5 +18,5 @@ select
 	NULL as discharge_to_source_value,
 	NULL as preceding_visit_occurrence_id
 
-into DatabaseSchemaCDMVersion6.visit_occurrence
-from DatabaseSchemaCDMVersion5.VISIT_OCCURRENCE
+into @DatabaseSchemaCDMVersion6.visit_occurrence
+from @DatabaseSchemaCDMVersion5.VISIT_OCCURRENCE
