@@ -24,5 +24,5 @@ select
 	route_source_value,
 	dose_unit_source_value
 
-into DatabaseSchemaCDMVersion6.drug_exposure
-from DatabaseSchemaCDMVersion5.DRUG_EXPOSURE
+into @DatabaseSchemaCDMVersion6.drug_exposure
+from @DatabaseSchemaCDMVersion5.DRUG_EXPOSURE
