@@ -20,5 +20,5 @@ select
 	NULL as stop_reason_source_value,
 	NULL as stop_reason_sourve_concept_id
 
-into DatabaseSchemaCDMVersion6.payer_plan_period
-from DatabaseSchemaCDMVersion5.PAYER_PLAN_PERIOD
+into @DatabaseSchemaCDMVersion6.payer_plan_period
+from @DatabaseSchemaCDMVersion5.PAYER_PLAN_PERIOD
